@@ -1,6 +1,6 @@
 {
-  "name": "@haiticss/haiticss",
-  "version": "1.0.0-alpha",
+  "name": "@prudencss/sass",
+  "version": "0.0.1",
   "description": "Just another baseline perspective to wear any project with the ITCSS architecture",
   "repository": {
     "type": "git",
@@ -12,12 +12,12 @@
     "itcss",
     "bemit"
   ],
-  "author": "Daniel Fornells",
+  "author": "Johannes Neugschwentner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haiticss/haiticss/issues"
+    "url": "https://github.com/prudencss/sass/issues"
   },
-  "homepage": "https://github.com/haiticss/haiticss#readme",
+  "homepage": "https://github.com/prudencss/sass#readme",
   "scripts": {
     "precommit": "cross-env BUILD_ENV=travisci npm run check",
     "check": "npm-run-all --parallel check:**",
