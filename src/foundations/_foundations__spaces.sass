@@ -15,15 +15,16 @@
 // Main space
 
 $f-space: 24px !default
+$f-space__factor: 2 !default
 
 // Space variants
 
 $f-space--none: 0 !default
-$f-space--tiny: round($f-space * 0.25) !default
-$f-space--small: round($f-space * 0.5) !default
+$f-space--tiny: round($f-space / $f-space__factor / $f-space__factor) !default
+$f-space--small: round($f-space / $f-space__factor) !default
 $f-space--medium: round($f-space * 1) !default
-$f-space--large: round($f-space * 2) !default
-$f-space--huge: round($f-space * 4) !default
+$f-space--large: round($f-space * $f-space__factor) !default
+$f-space--huge: round($f-space * $f-space__factor * $f-space__factor) !default
 
 // Spaces map
 

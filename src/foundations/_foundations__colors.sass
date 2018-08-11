@@ -13,4 +13,34 @@
 
 // Color groups map
 
-$f-colors: ("brand": $f-colors-brand, "neutral": $f-colors-neutral, "state": $f-colors-state, "vendor": $f-colors-vendor, "other": $f-colors-other) !default
+$f-colors-main: (
+  "brand": $f-colors-brand,
+  "neutral": $f-colors-neutral,
+  "state": $f-colors-state
+)
+$f-colors: map-merge($f-colors-main, ( "vendor": $f-colors-vendor, "other": $f-colors-other )) !default
+$f-colors-qualities: (
+  "ultra-light",
+  "light",
+  "semi-light",
+  "semi-dark",
+  "dark",
+  "ultra-dark",
+  "opaque",
+  "semi-opaque",
+  "semi-transparent",
+  "transparent"
+)
+
+@each $_cat, $_map in $f-colors-main
+  $each $_name, $_val in $_map
+    $f-colors__#{$_cat}-#{$_name}--ultra-light: ligthen($_val, 15%)
+    $f-colors__#{$_cat}-#{$_name}--light: ligthen($_val, 10%)
+    $f-colors__#{$_cat}-#{$_name}--semi-light: ligthen($_val, 5%)
+    $f-colors__#{$_cat}-#{$_name}--semi-dark: darken($_val, 5%)
+    $f-colors__#{$_cat}-#{$_name}--dark: darken($_val, 10%)
+    $f-colors__#{$_cat}-#{$_name}--ultra-dark: darken($_val, 15%)
+    $f-colors__#{$_cat}-#{$_name}--opaque: rgba($_val, 100%)
+    $f-colors__#{$_cat}-#{$_name}--semi-opaque: rgba($_val, 67%)
+    $f-colors__#{$_cat}-#{$_name}--semi-transparent: rgba($_val, 33%)
+    $f-colors__#{$_cat}-#{$_name}--transparent: rgba($_val, 0)

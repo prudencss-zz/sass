@@ -1,2 +1,72 @@
-button
-  color: green
+$c-btn__skin: "default" !default
+
+$c-btn__skin--#{$c-btn__skin}: (
+  padding: $f-space--small $f-space--medium
+  transition: all $f-duration--normal $f-easing--base
+  border-radius: $f-radius--medium
+) !default
+
+.c-btn
+  display: inline-block
+  vertical-align: middle
+  font: inherit
+  text-align: center
+  margin: 0
+  cursor: pointer
+  +t-skin($c-btn__skin--#{$c-btn__skin})
+
+  /* Branding Color Variants
+    =========================================================================== */
+
+  @each $_name, $_val in $f-colors-brand
+    .c-btn-brand--#{$_name}
+      background-color: $_val
+      color: $f-colors__neutral-#{$_name}
+
+      &,
+      &:hover,
+      &:active,
+      &:focus
+        text-decoration: none; /* [4] */
+        color: $f-colors__neutral-#{$_name}--semi-#{$f-color__brand-theme-type-accent}
+
+      &:hover,
+      &:focus
+        background-color: $f-colors__brand-#{$_name}--#{$f-color__brand-theme-type}
+
+  /* State Color Variants
+    =========================================================================== */
+
+  @each $_name, $_val in $f-colors-state
+    .c-btn-state--#{$_name}
+      background-color: $_val
+      color: $f-colors__neutral-primary
+
+      &,
+      &:hover,
+      &:active,
+      &:focus
+        text-decoration: none; /* [4] */
+        color: $f-colors__neutral-primary--semi-#{$f-color__brand-theme-type-accent}
+
+      &:hover,
+      &:focus
+        background-color: $f-colors__state-#{$_name}--#{$f-color__brand-theme-type}
+
+
+  /* Size variants
+     ========================================================================== */
+
+  @each $_name, $_val in s-core-map-diff(( "none": $f-space--none), $f-spaces)
+    .c-btn--#{$_name}
+      padding: $_val ($_val * 1.618)
+      font-size: calc(1rem + $_val)
+
+  .c-btn--ghost
+    background-color: none
+
+  .c-btn--no-border
+    border: none
+
+  .c-btn--fab
+    border-radius: 50%
