@@ -18,7 +18,7 @@ $f-colors: map-merge($f-colors-main, ( "vendor": $f-colors-vendor, "other": $f-c
 $f-colors-qualities: ( "ultra-light", "light", "semi-light", "semi-dark", "dark", "ultra-dark", "opaque", "semi-opaque", "semi-transparent", "transparent" )
 
 @each $_cat, $_map in $f-colors-main
-  $each $_name, $_val in $_map
+  @each $_name, $_val in $_map
     $f-colors__#{$_cat}-#{$_name}--ultra-light: ligthen($_val, 15%)
     $f-colors__#{$_cat}-#{$_name}--light: ligthen($_val, 10%)
     $f-colors__#{$_cat}-#{$_name}--semi-light: ligthen($_val, 5%)
