@@ -13,15 +13,14 @@
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
  * 3. Ensure the page always fills at least the entire height of the viewport.
- *
 
 // Document variables
 
 $e-document__body--font-family: $f-font-family__primary !default
 $e-document__body--font-size: $s-core__font-size !default
 $e-document__body--line-height: $f-line-height--medium !default
-$e-document__body--color: $f-color__neutral-primary--ultra-dark !default
-$e-document__body--bgcolor: $f-color__neutral-primary-bg--ultra-light !default
+$e-document__body--color: color-transform($f-color__neutral-primary, "ultra-dark") !default
+$e-document__body--bgcolor: color-transform($f-color__neutral-primary-bg, "ultra-light") !default
 
 // Apply document defaults according SETTINGS > CONFIG > SCOPED
 

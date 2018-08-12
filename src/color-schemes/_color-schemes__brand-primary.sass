@@ -2,20 +2,19 @@
  * BRAND PRIMARY
  *
  * Color combination based on brand primary color
- *
 
 // Scheme variables
 // --------------------------------------------------
 
 $cs-brand-primary--enabled: true !default
 
-$cs-brand-primary__bg-color: $f-color__brand-primary--ultra-light !default
-$cs-brand-primary__color: $f-color__brand-primary--dark !default
-$cs-brand-primary__selection-bgcolor: $f-color__brand-primary--dark !default
-$cs-brand-primary__selection-color: $f-color__brand-primary--ultra-light !default
-$cs-brand-primary__border-color: rgba($f-color__brand-primary--light, 0.25) !default
+$cs-brand-primary__bg-color: color-transform($f-color__brand-primary, "ultra-light") !default
+$cs-brand-primary__color: color-transform($f-color__brand-primary, "dark") !default
+$cs-brand-primary__selection-bgcolor: color-transform($f-color__brand-primary, "dark") !default
+$cs-brand-primary__selection-color: color-transform($f-color__brand-primary, "ultra-light") !default
+$cs-brand-primary__border-color: rgba(color-transform($f-color__brand-primary, "light"), 0.25) !default
 $cs-brand-primary__link-color: $f-color__brand-secondary !default
-$cs-brand-primary__link-hovercolor: $f-color__brand-secondary--dark !default
+$cs-brand-primary__link-hovercolor: color-transform($f-color__brand-secondary, "dark") !default
 $cs-brand-primary__heading-color: $f-color__brand-primary !default
 
 // Scheme mixin

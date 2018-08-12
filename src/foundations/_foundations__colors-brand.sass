@@ -3,7 +3,6 @@
  *
  * Define brand colors and its priorities
  * The values here are for sample proposes, consider add your owns
- *
 
 // Main brand colors
 
@@ -13,7 +12,8 @@ $f-color__brand-accent: #ffe066 !default
 
 // theme type - light or dark -> adjust neutral/text colors to combine
 
-$f-color__brand-theme-type: "light" // dark
+$f-color__brand-theme-type: "light"
+$f-color__brand-theme-type-accent: ""
 @if $f-color__brand-theme-type == "light"
   $f-color__brand-theme-type-accent: "dark"
 @else
@@ -21,4 +21,4 @@ $f-color__brand-theme-type: "light" // dark
 
 // Brand color map
 
-$f-colors-brand: ( "primary": $f-color__brand-primary, "secondary": $f-color__brand-secondary, "accent": $f-color__brand-accent )
+$f-colors-brand: ("primary": $f-color__brand-primary, "secondary": $f-color__brand-secondary, "accent": $f-color__brand-accent)

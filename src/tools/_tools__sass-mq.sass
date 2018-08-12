@@ -3,7 +3,6 @@
  *
  * Based on https://github.com/sass-mq/sass-mq
  * Adapted to Haiticss settings and workflow
- *
 
 // SASS-MQ variables
 // --------------------------------------------------
@@ -13,9 +12,9 @@ $t-sass-mq__breakpoints: $f-breakpoints !default
 $t-sass-mq__media-type: all !default
 
 $t-sass-mq__debug: $s-config__debug !default
-$t-sass-mq__debug--color: $f-color__neutral-grey--dark !default
-$t-sass-mq__debug--bg-color: $f-color__neutral-grey--ultra-light !default
-$t-sass-mq__debug--border-color: $f-color__neutral-grey--light !default
+$t-sass-mq__debug--color: color-transform($f-color__neutral-accent, "dark") !default
+$t-sass-mq__debug--bg-color: color-transform($f-color__neutral-accent, "ultra-light") !default
+$t-sass-mq__debug--border-color: color-transform($f-color__neutral-accent, "light") !default
 
 // SASS-MQ functions
 // --------------------------------------------------
