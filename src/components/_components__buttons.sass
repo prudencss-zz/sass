@@ -65,7 +65,6 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
 
 $_rem: 3rem
 @each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
-  $_rem: $_rem + 1rem
   .c-btn--#{$_name}
     padding: $_val ($_val * 1.618)
     font-size: calc(1rem + #{$_val})
@@ -73,7 +72,10 @@ $_rem: 3rem
       padding: unset
       width: $_rem
       height: $_rem
-      font-size: calc(#{$_rem} / 1.618)
+      font-size: calc((#{$_rem} + 1rem) / 4)
+      line-height: 1
+
+  $_rem: $_rem + 1rem
 
 .c-btn--ghost
   background-color: transparent
