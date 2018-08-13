@@ -68,9 +68,9 @@ $_rem: 3rem
   $_rem: $_rem + 1rem
   .c-btn--#{$_name}
     padding: $_val ($_val * 1.618)
-    font-size: calc(1rem + $_val)
+    font-size: 1rem + $_val
     &.c-btn--fab
-      padding: $_val
+      padding: unset
       width: $_rem
       height: $_rem
 
@@ -83,6 +83,6 @@ $_rem: 3rem
 
 .c-btn--fab
   border-radius: 50%
-  padding: $f-space--medium
+  padding: unset
   width: 3rem
   height: 3rem
