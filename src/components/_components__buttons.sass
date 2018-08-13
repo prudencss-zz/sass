@@ -30,7 +30,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover
-      background: $_hover-color-bg radial-gradient(circle, transparent 1%, color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type) 1%) center
+      background: $_hover-color-bg radial-gradient(circle, transparent 1%, $_hover-color-bg 1%) center/15000%
       transition-duration: 1s
     &:active
       background-color: color-transform(map-get($f-colors-brand, $_name), "ultra-" + $f-color__brand-theme-type)
