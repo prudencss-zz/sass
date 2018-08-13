@@ -12,7 +12,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
   +t-skin(map-get($c-btn__skins, $c-btn__skin))
 
 /* Branding Color Variants
- * ===========================================================================
+ * =========================================================================== */
 
 @each $_name, $_val in $f-colors-brand
   .c-btn-brand--#{$_name}
@@ -31,7 +31,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       background-color: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
 
 /* State Color Variants
- * ===========================================================================
+ * =========================================================================== */
 
 @each $_name, $_val in $f-colors-state
   .c-btn-state--#{$_name}
@@ -50,7 +50,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       background-color: color-transform(map-get($f-colors-state, $_name), $f-color__brand-theme-type)
 
 /* Size variants
- * ==========================================================================
+ * ========================================================================== */
 
 @each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
   .c-btn--#{$_name}
@@ -58,7 +58,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
     font-size: calc(1rem + $_val)
 
 .c-btn--ghost
-  background-color: none
+  background-color: transparent
 
 .c-btn--no-border
   border: none
