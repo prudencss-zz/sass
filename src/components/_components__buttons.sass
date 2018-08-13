@@ -17,6 +17,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
  * =========================================================================== */
 
 @each $_name, $_val in $f-colors-brand
+  $_hover-color-bg: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
   .c-btn-brand--#{$_name}
     background-color: $_val
     color: map-get($f-colors-neutral, $_name)
@@ -28,8 +29,6 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       text-decoration: none
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
-
-    $_hover-color-bg: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
     &:hover
       background-color: $_hover-color-bg
       background-radial-gradient: circle, transparent 1%, $_hover-color-bg
