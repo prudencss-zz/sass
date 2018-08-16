@@ -1,0 +1,45 @@
+/* -------------------------------------------------------------------------
+ * RIPPLE
+ *
+ * Pure CSS Material Design Ripple Effect
+ *
+ * Params:
+ * DURATION ........................... Animation duration
+
+// Animation variables
+// --------------------------------------------------
+
+$a-ripple--enabled: true !default
+
+// Animation Params
+
+$a-ripple__duration: $f-duration--normal !default
+$a-ripple__timing: $f-easing--out !default
+
+// Modifiers durations
+
+$a-ripple__mod-durations--enabled: true !default
+$a-ripple__mod-durations: $f-durations !default
+
+@keyframes ripple
+  from
+    background: radial-gradient(circle, color-transform(color-transform($f-color__neutral-primary-bg, "ultra" + $f-color__brand-theme-type), "semi-transparent"))
+    background-position: center center
+    background-size: 0%
+  to
+    background-size: cover
+
+@if $a-ripple--enabled
+  .a-ripple
+    animation-name: ripple
+    animation-timing-function: $a-ripple__timing
+    @if $a-ripple__mod-durations--enabled
+      @each $_name, $_duration in $a-ripple__mod-durations
+        &.a-ripple--duration-#{$_name}
+          animation-duartion: $_duration
+
+
+=a-ripple($_component, $_duration: $a-ripple__duration, $_timing: $a-ripple__timing)
+  .a-ripple--#{_component}
+    animation-timing-function: $_timing
+    animation-duration: $_duration

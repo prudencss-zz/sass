@@ -1,6 +1,9 @@
 $c-btn__skin: "default" !default
 $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition: all $f-duration--fast $f-easing--base, border-radius: $f-radius--medium))
 
+=c-btn--activation-animation
+  +a-ripple('btn')
+
 .c-btn
   display: inline-block
   vertical-align: middle
@@ -30,12 +33,10 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover
-      background: $_hover-color-bg radial-gradient(circle, transparent 1%, $_hover-color-bg 1%) center/15000%
-      transition-duration: $f-duration--normal
+      background: $_hover-color-bg
     &:active
       background-color: color-transform(map-get($f-colors-brand, $_name), "ultra-" + $f-color__brand-theme-type)
-      transition-duration: $f-duration--normal
-      background-size: 100%
+      +c-btn--activation-animation
 
 /* State Color Variants
  * =========================================================================== */
@@ -54,12 +55,11 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover
-      background: $_hover-color-bg radial-gradient(circle, transparent 1%, $_hover-color-bg 1%) center/15000%
-      transition-duration: 1s
+      background: $_hover-color-bg
     &:active
       background-color: color-transform(map-get($f-colors-state, $_name), "ultra-" + $f-color__brand-theme-type)
-      transition-duration: 0s
-      background-size: 100%
+      +c-btn--activation-animation
+
 /* Size variants
  * ========================================================================== */
 
