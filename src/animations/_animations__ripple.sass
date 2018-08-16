@@ -13,7 +13,7 @@ $a-ripple--enabled: true !default
 
 // Animation Params
 
-$a-ripple__duration: $f-duration--normal !default
+$a-ripple__duration: $f-duration--slow !default
 $a-ripple__timing: $f-easing--out !default
 
 // Modifiers durations
@@ -29,7 +29,7 @@ $a-ripple__mod-durations: $f-durations !default
 
 =a-ripple--in
   background-size: 100%
-  transition: background 0s
+  transition-duration: 0s
 
 @if $a-ripple--enabled
   .a-ripple
