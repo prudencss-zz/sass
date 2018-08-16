@@ -23,7 +23,7 @@ $a-ripple__mod-durations: $f-durations !default
 
 @keyframes ripple
   from
-    background: radial-gradient(circle, color-transform(color-transform($f-color__neutral-primary-bg, "ultra" + $f-color__brand-theme-type), "semi-transparent"))
+    background: radial-gradient(circle, transparent 0%, color-transform(color-transform($f-color__neutral-primary-bg, "ultra" + $f-color__brand-theme-type), "semi-opaque") 100%)
     background-position: center center
     background-size: 0%
   to
