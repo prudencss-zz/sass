@@ -5,6 +5,8 @@
  * ============================================================================
 
 @function color-transform($_color: white, $_transform: "default")
+  @if $_transform == "pure-light"
+    @return lighten($_color, 50%)
   @if $_transform == "ultra-light"
     @return lighten($_color, 15%)
 
@@ -22,6 +24,9 @@
 
   @if $_transform == "ultra-dark"
     @return darken($_color, 15%)
+
+  @if $_transform == "pure-dark"
+    @return darken($_color, 50%)
 
   @if $_transform == "opaque"
     @return rgba(red($_color), green($_color), blue($_color), 1)

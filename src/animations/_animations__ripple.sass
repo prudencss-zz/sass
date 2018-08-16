@@ -32,7 +32,10 @@ $a-ripple__mod-durations: $f-durations !default
 @if $a-ripple--enabled
   .a-ripple
     +a-ripple
-    &.in, &:active
+
+  .a-ripple
+    &:active,
+    &.in
       +a-ripple--in
 
 =a-ripple__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal)
