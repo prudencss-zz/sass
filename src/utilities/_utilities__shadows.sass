@@ -20,4 +20,4 @@ $u-shadows__maps: $f-shadows !default
 @if $u-shadows--enabled
   @each $_shadow-name, $_shadow-value in $u-shadows__maps
     .u-shadow--#{$_shadow-name}
-      box-shadow: $_shadow-value color-transform(map-get($f-colors-neutral, 'accent-bg'), 'ultra-dark') !important
+      box-shadow: $_shadow-value color-transform(map-get($f-colors-neutral, 'accent-bg'), 'semi-dark') !important
