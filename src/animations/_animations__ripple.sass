@@ -23,7 +23,7 @@ $a-ripple__mod-durations: $f-durations !default
 
 =a-ripple
   background-position: center
-  transition-property: background-size
+  transition-property: background
   transition-timing-function: $a-ripple__timing
   transition-duration: $a-ripple__duration
 
@@ -34,7 +34,6 @@ $a-ripple__mod-durations: $f-durations !default
 @if $a-ripple--enabled
   .a-ripple
     +a-ripple
-
     &.in, &:active
       +a-ripple--in
 
