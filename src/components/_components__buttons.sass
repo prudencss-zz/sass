@@ -17,7 +17,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
  * =========================================================================== */
 
 @each $_name, $_val in $f-colors-brand
-  $_hover-color-bg: color-transform(map-get($f-colors-brand, $_name), "semi-" + $f-color__brand-theme-type)
+  $_hover-color-bg: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
   .c-btn-brand--#{$_name}
     background-color: $_val
     color: map-get($f-colors-neutral, $_name)
@@ -27,31 +27,30 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
       text-decoration: none
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
-    &:hover
+    &:hover, &:focus
       background: $_hover-color-bg radial-gradient(circle, transparent 0.01%, $_hover-color-bg 0.01%) center/1500000%
-    &:focus
-      text-decoration: none
     &:active
       background-color: color-transform(map-get($f-colors-brand, $_name), "pure-" + $f-color__brand-theme-type)
+      background-size: 100%
+      transition: background 0s
 
 /* State Color Variants
  * =========================================================================== */
 
 @each $_name, $_val in $f-colors-state
-  $_hover-color-bg: color-transform(map-get($f-colors-state, $_name), "semi-" + $f-color__brand-theme-type)
+  $_hover-color-bg: color-transform(map-get($f-colors-state, $_name), $f-color__brand-theme-type)
   .c-btn-state--#{$_name}
     background-color: $_val
     color: $f-color__neutral-primary
     text-decoration: none
 
-    &:hover,
-    &:focus
+    &:hover, &:focus, &:active
       text-decoration: none
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
+
+    &:hover, &:focus
       background: $_hover-color-bg radial-gradient(circle, transparent 0.01%, $_hover-color-bg 0.01%) center/1500000%
     &:active
-      text-decoration: none
-      color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
       background-color: color-transform(map-get($f-colors-state, $_name), "pure-" + $f-color__brand-theme-type)
       background-size: 100%
       transition: background 0s
