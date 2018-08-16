@@ -21,25 +21,20 @@ $a-ripple__timing: $f-easing--out !default
 $a-ripple__mod-durations--enabled: true !default
 $a-ripple__mod-durations: $f-durations !default
 
-@keyframes ripple
-  from
-    background: radial-gradient(circle, transparent 0%, color-transform(color-transform($f-color__neutral-primary-bg, "ultra" + $f-color__brand-theme-type), "semi-opaque") 100%)
-    background-position: center center
-    background-size: 0%
-  to
-    background-size: 100%
-
 =a-ripple
-  animation-name: ripple
-  animation-timing-function: $a-ripple__timing
-  animation-duration: 0s
-  animation-play-state: unset
+  background-position: center
+  transition-property: background
+  transition-timing-function: $a-ripple__timing
+  transition-duration: $a-ripple__duration
 
 =a-ripple--in
-  animation-play-state: running
-  animation-iteration-count: 1
-  animation-direction: normal
-  animation-fill-mode: none
+  background-size: 100%
+  transition: background 0s
+
+=a-ripple--in__component($_component, $_color)
+  .a-ripple.a-ripple--#{$_component}:hover
+    background: $_color radial-gradient(circle, transparent 1%, color-transform(color-transform($_color, "ultra" + $f-color__brand-theme-type), "semi-opaque") 1%) center/15000%
+
 
 @if $a-ripple--enabled
   .a-ripple
@@ -50,14 +45,13 @@ $a-ripple__mod-durations: $f-durations !default
 
 =a-ripple__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal)
   .a-ripple--duration-#{$_duration-name}
-    animation-duration: $_duration-value
+    transition-duration: $_duration-value
 
 @if $a-ripple--enabled and $a-ripple__mod-durations--enabled
   @each $_name, $_duration in $a-ripple__mod-durations
     +a-ripple__mod-duration($_name, $_duration)
 
 =a-ripple--unset
-  animation-name: none
-  animation-duration: 0s
-  animation-timing-function: ease
-  animation-play-state: unset
+  transition-property: all
+  transition-duration: 0s
+  transition-timing-function: ease
