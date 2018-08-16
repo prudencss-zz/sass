@@ -27,19 +27,37 @@ $a-ripple__mod-durations: $f-durations !default
     background-position: center center
     background-size: 0%
   to
-    background-size: cover
+    background-size: 100%
+
+=a-ripple
+  animation-name: ripple
+  animation-timing-function: $a-ripple__timing
+  animation-duration: 0s
+  animation-play-state: unset
+
+=a-ripple--in
+  animation-play-state: running
+  animation-iteration-count: 1
+  animation-direction: normal
+  animation-fill-mode: none
 
 @if $a-ripple--enabled
   .a-ripple
-    animation-name: ripple
-    animation-timing-function: $a-ripple__timing
-    @if $a-ripple__mod-durations--enabled
-      @each $_name, $_duration in $a-ripple__mod-durations
-        &.a-ripple--duration-#{$_name}
-          animation-duartion: $_duration
+    +a-ripple
 
+    &.in, &:active
+      +a-ripple--in
 
-=a-ripple($_component, $_duration: $a-ripple__duration, $_timing: $a-ripple__timing)
-  &.a-ripple--#{_component}
-    animation-timing-function: $_timing
-    animation-duration: $_duration
+=a-ripple__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal)
+  .a-ripple--duration-#{$_duration-name}
+    animation-duration: $_duration-value
+
+@if $a-ripple--enabled and $a-ripple__mod-durations--enabled
+  @each $_name, $_duration in $a-ripple__mod-durations
+    +a-ripple__mod-duration($_name, $_duration)
+
+=a-ripple--unset
+  animation-name: none
+  animation-duration: 0s
+  animation-timing-function: ease
+  animation-play-state: unset

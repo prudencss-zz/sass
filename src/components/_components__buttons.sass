@@ -1,9 +1,6 @@
 $c-btn__skin: "default" !default
 $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition: all $f-duration--fast $f-easing--base, border-radius: $f-radius--medium))
 
-=c-btn--activation-animation
-  +a-ripple('btn')
-
 .c-btn
   display: inline-block
   vertical-align: middle
@@ -36,7 +33,6 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       background: $_hover-color-bg
     &:active
       background-color: color-transform(map-get($f-colors-brand, $_name), "ultra-" + $f-color__brand-theme-type)
-      +c-btn--activation-animation
 
 /* State Color Variants
  * =========================================================================== */
