@@ -24,14 +24,13 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
     &,
     &:hover,
-    &:active,
     &:focus
       text-decoration: none
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
-
-    &:hover
       background: $_hover-color-bg radial-gradient(circle, transparent -1%, color-transform(color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type), "semi-opaque") 0%) center/14999%
     &:active
+      text-decoration: none
+      color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
       background-color: color-transform(map-get($f-colors-brand, $_name), "ultra-" + $f-color__brand-theme-type)
 
 /* State Color Variants
@@ -45,14 +44,13 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
     &,
     &:hover,
-    &:active,
     &:focus
       text-decoration: none
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
-
-    &:hover
       background: $_hover-color-bg radial-gradient(circle, transparent -1%, color-transform(color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type), "semi-opaque") 0%) center/14999%
     &:active
+      text-decoration: none
+      color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
       background-color: color-transform(map-get($f-colors-state, $_name), "ultra-" + $f-color__brand-theme-type)
 
 /* Size variants
