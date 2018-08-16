@@ -23,13 +23,11 @@ $a-ripple__mod-durations: $f-durations !default
 
 =a-ripple
   background-position: center
-  transition-property: background
-  transition-timing-function: $a-ripple__timing
-  transition-duration: $a-ripple__duration
+  transition: background $a-ripple__duration $a-ripple__timing
 
 =a-ripple--in
   background-size: 100%
-  transition-duration: 0s
+  transition: background 0s
 
 @if $a-ripple--enabled
   .a-ripple
