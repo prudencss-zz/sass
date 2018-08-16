@@ -17,7 +17,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
  * =========================================================================== */
 
 @each $_name, $_val in $f-colors-brand
-  $_hover-color-bg: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
+  $_hover-color-bg: color-transform(map-get($f-colors-brand, $_name), "semi" + $f-color__brand-theme-type)
   .c-btn-brand--#{$_name}
     background-color: $_val
     color: map-get($f-colors-neutral, $_name)
@@ -27,17 +27,19 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
     &:focus
       text-decoration: none
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
-      background: $_hover-color-bg radial-gradient(circle, transparent 0%, color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type) 1%) center/15000%
+      background: $_hover-color-bg radial-gradient(circle, transparent 0%, $_hover-color-bg 1%) center/15000%
     &:active
       text-decoration: none
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
       background-color: color-transform(map-get($f-colors-brand, $_name), "ultra-" + $f-color__brand-theme-type)
+      &.a-ripple
+        background-color: white
 
 /* State Color Variants
  * =========================================================================== */
 
 @each $_name, $_val in $f-colors-state
-  $_hover-color-bg: color-transform(map-get($f-colors-state, $_name), $f-color__brand-theme-type)
+  $_hover-color-bg: color-transform(map-get($f-colors-state, $_name), "semi" + $f-color__brand-theme-type)
   .c-btn-state--#{$_name}
     background-color: $_val
     color: $f-color__neutral-primary
@@ -47,7 +49,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
     &:focus
       text-decoration: none
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
-      background: $_hover-color-bg radial-gradient(circle, transparent 0%, color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type) 1%) center/15000%
+      background: $_hover-color-bg radial-gradient(circle, transparent 0%, $_hover-color-bg 1%) center/15000%
     &:active
       text-decoration: none
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
