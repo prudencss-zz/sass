@@ -31,7 +31,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover
-      background: $_hover-color-bg
+      background: $_hover-color-bg radial-gradient(circle, transparent -1%, color-transform(color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type), "semi-opaque") 0%) center/14999%
     &:active
       background-color: color-transform(map-get($f-colors-brand, $_name), "ultra-" + $f-color__brand-theme-type)
 
@@ -43,7 +43,6 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
   .c-btn-state--#{$_name}
     background-color: $_val
     color: $f-color__neutral-primary
-    +a-ripple--in__component('btn', $_val)
 
     &,
     &:hover,
@@ -53,9 +52,9 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, transition
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover
-      background: $_hover-color-bg
-    // &:active
-      // background-color: color-transform(map-get($f-colors-state, $_name), "ultra-" + $f-color__brand-theme-type)
+      background: $_hover-color-bg radial-gradient(circle, transparent -1%, color-transform(color-transform($_hover-color-bg, "ultra" + $f-color__brand-theme-type), "semi-opaque") 0%) center/14999%
+    &:active
+      background-color: color-transform(map-get($f-colors-state, $_name), "ultra-" + $f-color__brand-theme-type)
 
 /* Size variants
  * ========================================================================== */
