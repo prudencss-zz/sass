@@ -58,7 +58,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 /* Size variants
  * ========================================================================== */
 
-$_rem: 2rem
+$_rem: 3rem
 @each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
   .c-btn--#{$_name}
     padding: $_val ($_val * 1.618)
@@ -67,8 +67,9 @@ $_rem: 2rem
       padding: unset
       width: $_rem
       height: $_rem
-      font-size: calc((#{$_rem}) / 2)
+      font-size: 1rem
       line-height: 1
+      clip-path: circle(#{$_rem})
 
   $_rem: $_rem + 1rem
 
