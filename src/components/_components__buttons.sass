@@ -25,7 +25,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   @each $_name, $_val in $f-colors-brand
     $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
-    .c-btn--#{$_name}
+    &.c-btn--#{$_name}
       background-color: $_val
       color: map-get($f-colors-neutral, $_name)
       text-decoration: none
@@ -45,7 +45,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   @each $_name, $_val in $f-colors-state
     $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
-    .c-btn--#{$_name}
+    &.c-btn--#{$_name}
       background-color: $_val
       color: $f-color__neutral-primary
       text-decoration: none
@@ -66,7 +66,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   $_rem: 3rem
   @each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
-    .c-btn--#{$_name}
+    &.c-btn--#{$_name}
       padding: $_val ($_val * 1.618)
       font-size: calc(1rem + (#{$_val} / 2))
       &.c-btn--fab
@@ -79,13 +79,13 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
     $_rem: $_rem + 1rem
 
-  .c-btn--ghost
+  &.c-btn--ghost
     background-color: transparent
 
-  .c-btn--no-border
+  &.c-btn--no-border
     border: none
 
-  .c-btn--fab
+  &.c-btn--fab
     border-radius: 50%
     padding: unset
     width: 3rem

@@ -37,9 +37,13 @@ $a-ripple__mod-durations: $f-durations !default
   background-size: 100% // necessary to duplicate or effect fails
   background-color: $_color
 
-=a-ripple__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal)
-  .a-ripple--duration-#{$_duration-name}
-    transition-duration: $_duration-value
+=a-ripple__mod-duration($_duration-value: $f-duration--normal)
+  transition-duration: $_duration-value
+
+=a-ripple--unset
+  transition-property: all
+  transition-duration: 0s
+  transition-timing-function: ease
 
 @if $a-ripple--enabled
   .a-ripple
@@ -62,12 +66,7 @@ $a-ripple__mod-durations: $f-durations !default
       &.in[class*="--#{$_color-name}"]
         +a-ripple--in-colored(color-transform($_color-val, "pure-" + $f-color__brand-theme-type))
 
-
-  @if $a-ripple--enabled and $a-ripple__mod-durations--enabled
+  @if $a-ripple__mod-durations--enabled
     @each $_name, $_duration in $a-ripple__mod-durations
-      +a-ripple__mod-duration($_name, $_duration)
-
-=a-ripple--unset
-  transition-property: all
-  transition-duration: 0s
-  transition-timing-function: ease
+      &.a-ripple--duration-#{$_name}
+        +a-ripple__mod-duration($_duration)
