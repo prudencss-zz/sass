@@ -25,7 +25,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   @each $_name, $_val in $f-colors-brand
     $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
-    .c-btn.c-btn--#{$_name}
+    .c-btn--#{$_name}
       background-color: $_val
       color: map-get($f-colors-neutral, $_name)
       text-decoration: none
