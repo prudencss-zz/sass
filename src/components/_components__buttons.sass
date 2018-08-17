@@ -20,73 +20,73 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   +t-skin(map-get($c-btn__skins, $c-btn__skin))
 
-/* Branding Color Variants
- * =========================================================================== */
+  /* Branding Color Variants
+   * =========================================================================== */
 
-@each $_name, $_val in $f-colors-brand
-  $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
-  .c-btn.c-btn--#{$_name}
-    background-color: $_val
-    color: map-get($f-colors-neutral, $_name)
-    text-decoration: none
-
-    &:hover, &:focus, &:active
+  @each $_name, $_val in $f-colors-brand
+    $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
+    .c-btn.c-btn--#{$_name}
+      background-color: $_val
+      color: map-get($f-colors-neutral, $_name)
       text-decoration: none
-      color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
-    &:hover, &:focus
-      &:not(.a-ripple)
-        background-color: $_hover-color-bg
-    &:active:not(.a-ripple)
-      background-color: color-transform($_val, $f-color__brand-theme-type)
+      &:hover, &:focus, &:active
+        text-decoration: none
+        color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
-/* State Color Variants
- * =========================================================================== */
+      &:hover, &:focus
+        &:not(.a-ripple)
+          background-color: $_hover-color-bg
+      &:active:not(.a-ripple)
+        background-color: color-transform($_val, $f-color__brand-theme-type)
 
-@each $_name, $_val in $f-colors-state
-  $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
-  .c-btn--#{$_name}
-    background-color: $_val
-    color: $f-color__neutral-primary
-    text-decoration: none
+  /* State Color Variants
+   * =========================================================================== */
 
-    &:hover, &:focus, &:active
+  @each $_name, $_val in $f-colors-state
+    $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
+    .c-btn--#{$_name}
+      background-color: $_val
+      color: $f-color__neutral-primary
       text-decoration: none
-      color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
 
-    &:hover, &:focus
-      &:not(.a-ripple)
-        background-color: $_hover-color-bg
-    &:active:not(.a-ripple)
-      background-color: color-transform($_val, $f-color__brand-theme-type)
+      &:hover, &:focus, &:active
+        text-decoration: none
+        color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
+
+      &:hover, &:focus
+        &:not(.a-ripple)
+          background-color: $_hover-color-bg
+      &:active:not(.a-ripple)
+        background-color: color-transform($_val, $f-color__brand-theme-type)
 
 
-/* Size variants
- * ========================================================================== */
+  /* Size variants
+   * ========================================================================== */
 
-$_rem: 3rem
-@each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
-  .c-btn--#{$_name}
-    padding: $_val ($_val * 1.618)
-    font-size: calc(1rem + (#{$_val} / 2))
-    &.c-btn--fab
-      padding: unset
-      width: $_rem
-      height: $_rem
-      font-size: 1rem
-      line-height: 1
-      clip-path: circle(#{$_rem / 2})
+  $_rem: 3rem
+  @each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
+    .c-btn--#{$_name}
+      padding: $_val ($_val * 1.618)
+      font-size: calc(1rem + (#{$_val} / 2))
+      &.c-btn--fab
+        padding: unset
+        width: $_rem
+        height: $_rem
+        font-size: 1rem
+        line-height: 1
+        clip-path: circle(#{$_rem / 2})
 
-  $_rem: $_rem + 1rem
+    $_rem: $_rem + 1rem
 
-.c-btn--ghost
-  background-color: transparent
+  .c-btn--ghost
+    background-color: transparent
 
-.c-btn--no-border
-  border: none
+  .c-btn--no-border
+    border: none
 
-.c-btn--fab
-  border-radius: 50%
-  padding: unset
-  width: 3rem
-  height: 3rem
+  .c-btn--fab
+    border-radius: 50%
+    padding: unset
+    width: 3rem
+    height: 3rem
