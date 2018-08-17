@@ -3,8 +3,8 @@
     "stylelint-scss"
   ],
   "ignoreFiles": [
-    "src/haiticss.css",
-    "src/haiticss--scoped.css",
+    "src/prudencss.css",
+    "src/prudencss--scoped.css",
     "src/generic/_generic__normalize.scss",
     "src/tools/vendor/_quantity-queries.scss"
   ],
