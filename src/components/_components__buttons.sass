@@ -11,6 +11,13 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
   outline: none
   border-style: solid
 
+  &:hover,
+  &:focus
+    background-color: color-transform($f-color__neutral-accent-bg, "semi-" + $f-color__brand-theme-type)
+
+  &:active
+    background-color: color-transform($f-color__neutral-accent-bg, $f-color__brand-theme-type)
+
   +t-skin(map-get($c-btn__skins, $c-btn__skin))
 
 /* Branding Color Variants
@@ -28,11 +35,10 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover, &:focus
-      background-color: $_hover-color-bg
-    &:active
+      &:not(.a-ripple)
+        background-color: $_hover-color-bg
+    &:active:not(.a-ripple)
       background-color: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
-      background-size: 100%
-      transition: background 0s
 
 /* State Color Variants
  * =========================================================================== */
@@ -49,11 +55,11 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover, &:focus
-      background-color: $_hover-color-bg
-    &:active
+      &:not(.a-ripple)
+        background-color: $_hover-color-bg
+    &:active:not(.a-ripple)
       background-color: color-transform(map-get($f-colors-state, $_name), $f-color__brand-theme-type)
-      background-size: 100%
-      transition: background 0s
+
 
 /* Size variants
  * ========================================================================== */
