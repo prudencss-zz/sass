@@ -28,7 +28,9 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
       color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover, &:focus
-      background: $_hover-color-bg radial-gradient(circle, transparent 0.01%, $_hover-color-bg 0.01%) center/1500000%
+      background-color: $_hover-color-bg
+      &.a-ripple
+        background: radial-gradient(circle, transparent 0.01%, $_hover-color-bg 0.01%) center/1500000%
     &:active
       background-color: color-transform(map-get($f-colors-brand, $_name), "pure-" + $f-color__brand-theme-type)
       background-size: 100%
@@ -49,7 +51,9 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
       color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
 
     &:hover, &:focus
-      background: $_hover-color-bg radial-gradient(circle, transparent 0.01%, $_hover-color-bg 0.01%) center/1500000%
+      background-color: $_hover-color-bg
+      &.a-ripple
+        background: radial-gradient(circle, transparent 0.01%, $_hover-color-bg 0.01%) center/1500000%
     &:active
       background-color: color-transform(map-get($f-colors-state, $_name), "pure-" + $f-color__brand-theme-type)
       background-size: 100%
