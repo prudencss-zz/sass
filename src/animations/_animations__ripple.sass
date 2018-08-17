@@ -41,12 +41,10 @@ $a-ripple__mod-durations: $f-durations !default
   .a-ripple
     +a-ripple
 
-  .a-ripple
     &:hover,
     &:focus
       +a-ripple--hover(color-transform($f-color__neutral-accent-bg, "semi-" + $f-color__brand-theme-type))
 
-  .a-ripple
     &:active,
     &.in
       +a-ripple--in
@@ -57,7 +55,6 @@ $a-ripple__mod-durations: $f-durations !default
       &:focus[class*="--#{$_color-name}"]
         +a-ripple--hover(color-transform($_color-val, "semi-" + $f-color__brand-theme-type))
 
-    .a-ripple
       &:active[class*="--#{$_color-name}"],
       &.in[class*="--#{$_color-name}"]
         +a-ripple--in-colored(color-transform($_color-val, "pure-" + $f-color__brand-theme-type))
