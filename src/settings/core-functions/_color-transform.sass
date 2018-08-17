@@ -7,8 +7,9 @@
 @function color-transform($_color: white, $_transform: "default")
   @if $_transform == "pure-light"
     @return lighten($_color, 50%)
+
   @if $_transform == "ultra-light"
-    @return lighten($_color, 15%)
+    @return lighten($_color, 20%)
 
   @if $_transform == "light"
     @return lighten($_color, 10%)
@@ -23,7 +24,7 @@
     @return darken($_color, 10%)
 
   @if $_transform == "ultra-dark"
-    @return darken($_color, 15%)
+    @return darken($_color, 20%)
 
   @if $_transform == "pure-dark"
     @return darken($_color, 50%)
