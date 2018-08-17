@@ -26,7 +26,7 @@ $a-ripple__mod-durations: $f-durations !default
   transition: background $a-ripple__duration $a-ripple__timing
 
 =a-ripple--hover($_color)
-  background: $_color radial-gradient(circle, transparent 0.1%, violet 0.1%) center/150000%
+  background: $_color radial-gradient(circle, transparent 0.1%, color-transform($_color, $f-color__brand-theme-type) 0.1%) center/150000%
 
 =a-ripple--in
   background-size: 100%
