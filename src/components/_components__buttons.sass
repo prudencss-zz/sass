@@ -37,7 +37,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
     &:hover, &:focus
       background-color: $_hover-color-bg
     &:active
-      background-color: color-transform(map-get($f-colors-brand, $_name), "pure-" + $f-color__brand-theme-type)
+      background-color: color-transform(map-get($f-colors-brand, $_name), $f-color__brand-theme-type)
       background-size: 100%
       transition: background 0s
 
@@ -58,7 +58,7 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
     &:hover, &:focus
       background-color: $_hover-color-bg
     &:active
-      background-color: color-transform(map-get($f-colors-state, $_name), "pure-" + $f-color__brand-theme-type)
+      background-color: color-transform(map-get($f-colors-state, $_name), $f-color__brand-theme-type)
       background-size: 100%
       transition: background 0s
 
