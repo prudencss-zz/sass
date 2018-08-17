@@ -28,8 +28,6 @@ $a-ripple__mod-durations: $f-durations !default
 =a-ripple--hover($_color)
   background: $_color radial-gradient(circle, transparent 0.01%, $_color 0.01%) center/1500000%
 
-
-
 =a-ripple--in
   background-size: 100%
   transition: background 0s
@@ -40,7 +38,7 @@ $a-ripple__mod-durations: $f-durations !default
 
     @each $_color-name, $_color-val in map-merge($f-colors-brand, $f-colors-state)
       &:hover
-        +a-ripple--hover($f-color__neutral-primary-bg)
+        +a-ripple--hover($f-color__neutral-accent-bg)
       &:hover[class*="--#{$_color-name}"]
         +a-ripple--hover(color-transform($_color-val, $f-color__brand-theme-type))
 

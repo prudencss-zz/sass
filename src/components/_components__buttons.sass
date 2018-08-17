@@ -1,5 +1,5 @@
 $c-btn__skin: "default" !default
-$c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-radius: $f-radius--medium))
+$c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-radius: $f-radius--medium, background-color: $f-color__neutral-accent-bg))
 
 .c-btn
   display: inline-block
@@ -12,6 +12,9 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
   border-style: solid
 
   +t-skin(map-get($c-btn__skins, $c-btn__skin))
+
+  &:active
+    background-color: color-transform($f-color__neutral-primary-bg, $f-color__brand-theme-type)
 
 /* Branding Color Variants
  * =========================================================================== */
