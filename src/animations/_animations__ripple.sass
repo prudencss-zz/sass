@@ -40,13 +40,13 @@ $a-ripple__mod-durations: $f-durations !default
     +a-ripple
 
     &:hover
-      +a-ripple--hover(color-transform($f-color__neutral-accent-bg, "semi" + $f-color__brand-theme-type))
+      +a-ripple--hover(color-transform($f-color__neutral-accent-bg, "semi-" + $f-color__brand-theme-type))
 
     @each $_color-name, $_color-val in map-merge($f-colors-brand, $f-colors-state)
       &:hover[class*="--#{$_color-name}"]
-        +a-ripple--hover(color-transform($_color-val, "semi" + $f-color__brand-theme-type))
+        +a-ripple--hover(color-transform($_color-val, "semi-" + $f-color__brand-theme-type))
       &:active[class*="--#{$_color-name}"]
-        +a-ripple--in-colored(color-transform($_color-val, "pure" + $f-color__brand-theme-type))
+        +a-ripple--in-colored(color-transform($_color-val, "pure-" + $f-color__brand-theme-type))
 
     &:active,
     &.in
