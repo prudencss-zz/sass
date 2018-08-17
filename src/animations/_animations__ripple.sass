@@ -31,10 +31,10 @@ $a-ripple__mod-durations: $f-durations !default
 =a-ripple--in
   background-size: 100%
   transition: background 0s
-  background-color: color-transform($f-color__neutral-accent-bg, "ultra-" + $f-color__brand-theme-type)
+  background: color-transform($f-color__neutral-accent-bg, "ultra-" + $f-color__brand-theme-type)
 
 =a-ripple--in-colored($_color)
-  background-color: $_color !important
+  background: $_color !important
 
 @if $a-ripple--enabled
   .a-ripple
@@ -42,6 +42,10 @@ $a-ripple__mod-durations: $f-durations !default
 
     &:hover
       +a-ripple--hover(color-transform($f-color__neutral-accent-bg, "semi-" + $f-color__brand-theme-type))
+
+    &:active,
+    &.in
+      +a-ripple--in
 
     @each $_color-name, $_color-val in map-merge($f-colors-brand, $f-colors-state)
       &:hover[class*="--#{$_color-name}"]
@@ -51,9 +55,6 @@ $a-ripple__mod-durations: $f-durations !default
       &.in[class*="--#{$_color-name}"]
         +a-ripple--in-colored(color-transform($_color-val, "ultra-" + $f-color__brand-theme-type))
 
-    &:active,
-    &.in
-      +a-ripple--in
 
 
 =a-ripple__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal)
