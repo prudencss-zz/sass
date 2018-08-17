@@ -34,7 +34,7 @@ $a-ripple__mod-durations: $f-durations !default
   background-color: color-transform($f-color__neutral-accent-bg, "pure-" + $f-color__brand-theme-type)
 
 =a-ripple--in-colored($_color)
-  background-size: 100%
+  background-size: 100% // necessary to duplicate or effect fails
   background-color: $_color
 
 @if $a-ripple--enabled
