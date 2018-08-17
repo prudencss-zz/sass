@@ -31,7 +31,7 @@ $a-ripple__mod-durations: $f-durations !default
 =a-ripple--in
   background-size: 100%
   transition: background 0s
-  background: color-transform($f-color__neutral-accent-bg, "ultra-" + $f-color__brand-theme-type) !important
+  background: color-transform($f-color__neutral-accent-bg, "pure-" + $f-color__brand-theme-type) !important
 
 =a-ripple--in-colored($_color)
   background: $_color !important
@@ -53,7 +53,7 @@ $a-ripple__mod-durations: $f-durations !default
 
       &:active[class*="--#{$_color-name}"],
       &.in[class*="--#{$_color-name}"]
-        +a-ripple--in-colored(color-transform($_color-val, "ultra-" + $f-color__brand-theme-type))
+        +a-ripple--in-colored(color-transform($_color-val, "pure-" + $f-color__brand-theme-type))
 
 
 
