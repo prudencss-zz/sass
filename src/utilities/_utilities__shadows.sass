@@ -22,4 +22,4 @@ $u-shadows__maps: $f-shadows !default
     .u-shadow--#{$_shadow-name}
       box-shadow: s-core-shadow($_shadow-map) map-get($f-colors-neutral, 'accent-bg')
     .u-shadow--#{$_shadow-name}:active
-      box-shadow: s-core-shadow($_shadow-map, 2) map-get($f-colors-neutral, 'accent-bg')
+      box-shadow: s-core-shadow($_shadow-map, $f-shadow__emphasis) map-get($f-colors-neutral, 'accent-bg')
