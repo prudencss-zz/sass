@@ -18,6 +18,8 @@ $u-shadows__maps: $f-shadows !default
 // --------------------------------------------------
 
 @if $u-shadows--enabled
-  @each $_shadow-name, $_shadow-value in $u-shadows__maps
+  @each $_shadow-name, $_shadow-map in $u-shadows__maps
     .u-shadow--#{$_shadow-name}
-      box-shadow: $_shadow-value color-transform(map-get($f-colors-neutral, 'accent-bg'), 'semi-transparent') !important
+      box-shadow: s-core-shadow($_shadow-map) map-get($f-colors-neutral, 'accent-bg')
+    .u-shadow--#{$_shadow-name}:active
+      box-shadow: s-core-shadow($_shadow-map, 2) map-get($f-colors-neutral, 'accent-bg')
