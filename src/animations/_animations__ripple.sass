@@ -66,7 +66,7 @@ $a-ripple__mod-durations: $f-durations !default
       &.in[class*="--#{$_color-name}"]
         +a-ripple--in-colored(color-transform($_color-val, "pure-" + $f-color__brand-theme-type))
 
-  @if $a-ripple__mod-durations--enabled
-    @each $_name, $_duration in $a-ripple__mod-durations
-      &.a-ripple--duration-#{$_name}
-        +a-ripple__mod-duration($_duration)
+    @if $a-ripple__mod-durations--enabled
+      @each $_name, $_duration in $a-ripple__mod-durations
+        &.a-ripple--duration-#{$_name}
+          +a-ripple__mod-duration($_duration)
