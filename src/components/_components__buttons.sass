@@ -20,17 +20,11 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   +t-skin(map-get($c-btn__skins, $c-btn__skin))
 
-  &.c-btn--ghost, &.c-btn--basic, &.c-btn--stroked
-    background-color: transparent
+  &.c-btn--ghost
+    +t-background-color--ghost
 
-  &.c-btn--no-border, &.c-btn--basic, &.c-btn--fab, &.c-btn--flat
+  &.c-btn--no-border
     border: none
-
-  &.c-btn--fab
-    border-radius: 50%
-    padding: unset
-    width: 3rem
-    height: 3rem
 
   /* Branding Color Variants
    * =========================================================================== */
@@ -89,3 +83,20 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
         line-height: 1
 
     $_rem: $_rem + 1rem
+
+  &.c-btn--basic
+    +t-background-color--ghost
+    border: none
+
+  &.c-btn--stroked
+    +t-background-color--ghost
+
+  &.c-btn--flat
+    border: none
+
+  &.c-btn--fab
+    border: none
+    border-radius: 50%
+    padding: unset
+    width: 3rem
+    height: 3rem
