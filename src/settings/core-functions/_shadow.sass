@@ -1,0 +1,2 @@
+@function s-core-shadow($map, $emphasis: 1)
+  @return map-get($map, 'mod') round(map-get($map, 'x') * $emphasis) round(map-get($map, 'y') * $emphasis) round(map-get($map, 'blur') * $emphasis) round(map-get($map, 'spread') * $emphasis)
