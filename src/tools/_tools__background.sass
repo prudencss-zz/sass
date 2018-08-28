@@ -1,0 +1,12 @@
+=t-background-color--ghost($_color: null, $_amount: null)
+  @if $_color == null
+    background-color: transparent
+  @else
+    @if $_amount == null
+      background-color: transparentize($_color, 1 / 1.618)
+    @else
+      background-color: transparentize($_color, $_amount)
+
+
+// =t-background-color--radial-gradient($_default, $_color)
+//  background: $_default radial-gradient($_color)
