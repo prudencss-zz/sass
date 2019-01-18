@@ -5,7 +5,7 @@ const chalk = require('chalk'),
 
 const linter_options = {
     configFile: '.stylelintrc',
-    files: './src/**/*.scss',
+    files: './src/**/*.sass',
     formatter: 'verbose',
     ignoreDisables: false,
     syntax: 'scss'

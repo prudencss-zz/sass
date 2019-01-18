@@ -30,5 +30,5 @@ function compileFile(filePath) {
 }
 
 
-compileFile('./src/haiticss.scss');
-compileFile('./src/haiticss--scoped.scss');
+compileFile('./src/prudencss.sass');
+compileFile('./src/prudencss--scoped.sass');
