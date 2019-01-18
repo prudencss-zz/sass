@@ -1,10 +1,10 @@
 {
   "name": "@prudencss/sass",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Just another baseline perspective to wear any project with the ITCSS architecture",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haiticss/haiticss.git"
+    "url": "git+https://github.com/prudencss/sass.git"
   },
   "keywords": [
     "sass",
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/prudencss/sass#readme",
   "scripts": {
-    "precommit": "cross-env BUILD_ENV=travisci npm run check",
     "check": "npm-run-all --parallel check:**",
     "check:sasslint": "npx sass-lint -c ./.sass-lint.yml './src/**/*.sass' -v -q",
     "check:sass": "node ./tasks/check_sass_compile.js",
