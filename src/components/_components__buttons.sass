@@ -25,18 +25,23 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   @each $_name, $_val in $f-colors-brand
     $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
+
     &.c-btn--#{$_name}
       background-color: $_val
       color: map-get($f-colors-neutral, $_name)
       text-decoration: none
 
-      &:hover, &:focus, &:active
+      &:hover,
+      &:focus,
+      &:active
         text-decoration: none
         color: color-transform(map-get($f-colors-neutral, $_name), "semi-" + $f-color__brand-theme-type-accent)
 
-      &:hover, &:focus
+      &:hover,
+      &:focus
         &:not(.a-ripple)
           background-color: $_hover-color-bg
+
       &:active:not(.a-ripple)
         background-color: color-transform($_val, $f-color__brand-theme-type)
 
@@ -45,18 +50,23 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   @each $_name, $_val in $f-colors-state
     $_hover-color-bg: color-transform($_val, $f-color__brand-theme-type)
+
     &.c-btn--#{$_name}
       background-color: $_val
       color: $f-color__neutral-primary
       text-decoration: none
 
-      &:hover, &:focus, &:active
+      &:hover,
+      &:focus,
+      &:active
         text-decoration: none
         color: color-transform($f-color__neutral-primary, "semi-" + $f-color__brand-theme-type-accent)
 
-      &:hover, &:focus
+      &:hover,
+      &:focus
         &:not(.a-ripple)
           background-color: $_hover-color-bg
+
       &:active:not(.a-ripple)
         background-color: color-transform($_val, $f-color__brand-theme-type)
 
@@ -66,9 +76,11 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
   $_rem: 3rem
   @each $_name, $_val in s-core-map-diff(("none": $f-space--none), $f-spaces)
+
     &.c-btn--#{$_name}
       padding: $_val ($_val * 1.618)
       font-size: calc(1rem + (#{$_val} / 2))
+
       &.c-btn--fab
         padding: unset
         width: $_rem
@@ -79,10 +91,15 @@ $c-btn__skins: ( default: (padding: $f-space--small $f-space--medium, border-rad
 
     $_rem: $_rem + 1rem
 
-  &.c-btn--ghost, &.c-btn--basic, &.c-btn--stroked
+  &.c-btn--ghost,
+  &.c-btn--basic,
+  &.c-btn--stroked
     background-color: transparent
 
-  &.c-btn--no-border, &.c-btn--basic, &.c-btn--fab, &.c-btn--flat
+  &.c-btn--no-border,
+  &.c-btn--basic,
+  &.c-btn--fab,
+  &.c-btn--flat
     border: none
 
   &.c-btn--fab
